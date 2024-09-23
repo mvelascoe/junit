@@ -67,7 +67,6 @@ public class ExampleTest {
          assertEquals(4, resultado2); // Debe haber 4 letras 'a'
     }
 
-
     // 4. Método que retorna un valor booleano si la lista contiene el elemento
     @Test
     public void testContieneElemento() {
@@ -82,4 +81,19 @@ public class ExampleTest {
         assertTrue(siContiene); // Debe contener 'argentian'
         assertFalse(noContiene); // No debe contener 'portugal'
     }
+
+    // 5. Método para revertir una cadena
+    @Test
+    public void testRevertirCadena() {
+        // Given
+        String cadena = "arroz";
+        // When
+        String resultado = example.revertirCadena(cadena);
+        // Then
+        assertEquals("zorra", resultado); // La cadena alveres
+    }
+
+    
+
+
 }

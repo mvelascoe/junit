@@ -29,7 +29,9 @@ public class Example {
         return lista.contains(elemento);
     }
 
-    
-
+    // 5. Método para revertir una cadena
+    public String revertirCadena(String cadena) {
+        return new StringBuilder(cadena).reverse().toString();
+    }
 
 }
