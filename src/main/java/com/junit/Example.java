@@ -1,5 +1,7 @@
 package com.junit;
 
+import java.util.List;
+
 public class Example {
 
     // Metodo para sumar dos numero enteros
@@ -15,12 +17,19 @@ public class Example {
         return true;
     }
 
-     // 3. Método para contar el número de letras 'a' en una cadena
-     public int contarLetrasA(String cadena) {
+    // 3. Método para contar el número de letras 'a' en una cadena
+    public int contarLetrasA(String cadena) {
         return (int) cadena.chars()
                 .filter(letra -> letra == 'a')
                 .count();
     }
+
+    // 4. Método que retorna un valor booleano si la lista contiene el elemento
+    public boolean contieneElemento(List<String> lista, String elemento) {
+        return lista.contains(elemento);
+    }
+
+    
 
 
 }

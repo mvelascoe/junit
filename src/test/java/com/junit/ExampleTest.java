@@ -1,10 +1,14 @@
 package com.junit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.Arrays;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -63,4 +67,19 @@ public class ExampleTest {
          assertEquals(4, resultado2); // Debe haber 4 letras 'a'
     }
 
+
+    // 4. Método que retorna un valor booleano si la lista contiene el elemento
+    @Test
+    public void testContieneElemento() {
+        // Given
+        List<String> lista = Arrays.asList("argentina", "españa", "alemania");
+        String elementoPresente = "argentina";
+        String elementoFaltante = "portugal";
+        // When
+        boolean siContiene = example.contieneElemento(lista, elementoPresente);
+        boolean noContiene = example.contieneElemento(lista, elementoFaltante);
+        // Then
+        assertTrue(siContiene); // Debe contener 'argentian'
+        assertFalse(noContiene); // No debe contener 'portugal'
+    }
 }
