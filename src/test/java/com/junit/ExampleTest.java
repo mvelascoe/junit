@@ -31,6 +31,7 @@ public class ExampleTest {
         assertInstanceOf(Integer.class, result); // Se verifica que el resultado sea de tipo Integer
     }
 
+    // 2. Método que lanza una excepción si el argumento es negativo
     @Test
     public void testCheckPositivo() {
         // Given
@@ -40,12 +41,26 @@ public class ExampleTest {
         boolean resultadoPositivo = example.checkPositivo(numeroPositivo);
         // Then
         assertTrue(resultadoPositivo); // Verifica que el resultado sea True
-        
+
         // Verificamos la excepción para número negativo
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             example.checkPositivo(numeroNegativo);
         });
         assertEquals("El número no puede ser negativo", exception.getMessage());
+    }
+
+    // 3. Método para contar el número de letras 'a' en una cadena
+    @Test
+    public void testContarLetrasA() {
+         // Given
+         String cadena = "maritza";
+         String cadena2 = "calabaza";
+         // When
+         int resultado = example.contarLetrasA(cadena);
+         int resultado2 = example.contarLetrasA(cadena2);
+         // Then
+         assertEquals(2, resultado); // Debe haber 2 letras 'a'
+         assertEquals(4, resultado2); // Debe haber 4 letras 'a'
     }
 
 }
