@@ -3,6 +3,8 @@ package com.junit;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,6 +29,23 @@ public class ExampleTest {
         assertNotNull(result); // Se verifica que el resultado no sea nulo
         assertEquals(15, result);  // Se verifica que el resultado sea igual a 15
         assertInstanceOf(Integer.class, result); // Se verifica que el resultado sea de tipo Integer
+    }
+
+    @Test
+    public void testCheckPositivo() {
+        // Given
+        int numeroPositivo = 5;
+        int numeroNegativo = -5;
+        // When
+        boolean resultadoPositivo = example.checkPositivo(numeroPositivo);
+        // Then
+        assertTrue(resultadoPositivo); // Verifica que el resultado sea True
+        
+        // Verificamos la excepción para número negativo
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            example.checkPositivo(numeroNegativo);
+        });
+        assertEquals("El número no puede ser negativo", exception.getMessage());
     }
 
 }
