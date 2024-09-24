@@ -104,5 +104,20 @@ public class ExampleTest {
         assertEquals(6, resultado); // 3! = 3×2×1 = 6
     }
 
+    @Test
+    public void testEsPrimo(){
+        // Given
+        int numeroPrimo = 11;
+        int numeroNoPrimo = 22;
+        // When
+        boolean resultadoPrimo = example.esPrimo(numeroPrimo);
+        boolean resultadoNoPrimo = example.esPrimo(numeroNoPrimo);
+        // Then
+        assertTrue(resultadoPrimo); // 11 es primo
+        assertFalse(resultadoNoPrimo); // 22 no es primo
+    }
+
+    
+
 
 }

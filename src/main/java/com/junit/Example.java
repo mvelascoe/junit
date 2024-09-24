@@ -46,6 +46,17 @@ public class Example {
         return resultado;
     }
 
-    
+    // 7. Método para verificar si un número es primo
+    public boolean esPrimo(int numero) {
+        if (numero <= 1) {
+            return false;
+        }
+        for (int i = 2; i * i <= numero; i++) {
+            if (numero % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
 }
