@@ -1,6 +1,7 @@
 package com.junit;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Example {
 
@@ -63,6 +64,13 @@ public class Example {
     public String mensajeConRetraso() throws InterruptedException {
         Thread.sleep(5000);
         return "Listo después de retraso";
+    }
+
+    // 9. Método para convertir una lista de enteros a lista de strings
+    public List<String> convertirAString(List<Integer> lista) {
+        return lista.stream()
+                .map(String::valueOf)
+                .collect(Collectors.toList());
     }
 
 }

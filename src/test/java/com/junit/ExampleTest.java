@@ -14,24 +14,24 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class ExampleTest {
-    private Example example; //Declaramos la variable de tipo Example que se usara en las pruebas
+    private Example example; // Declaramos la variable de tipo Example que se usara en las pruebas
 
     // Método que se ejecuta antes de cada prueba para inicializar el objeto Example
     @BeforeEach
-    public void init(){
-        this.example = new Example();  //Se instancia el objeto antes de cada prueba
+    public void init() {
+        this.example = new Example(); // Se instancia el objeto antes de cada prueba
     }
 
     @Test
-    public void testSumar(){
-        //Given - Se definen los elementos necesarios para la prueba
+    public void testSumar() {
+        // Given - Se definen los elementos necesarios para la prueba
         int numberA = 5;
         int numberB = 10;
-        //When - Cuando, se ejecuta el método a probar con los elementos dados
+        // When - Cuando, se ejecuta el método a probar con los elementos dados
         int result = example.sumar(numberA, numberB);
-        //Then - Entonces, se validan los resultados esperados
+        // Then - Entonces, se validan los resultados esperados
         assertNotNull(result); // Se verifica que el resultado no sea nulo
-        assertEquals(15, result);  // Se verifica que el resultado sea igual a 15
+        assertEquals(15, result); // Se verifica que el resultado sea igual a 15
         assertInstanceOf(Integer.class, result); // Se verifica que el resultado sea de tipo Integer
     }
 
@@ -56,15 +56,15 @@ public class ExampleTest {
     // 3. Método para contar el número de letras 'a' en una cadena
     @Test
     public void testContarLetrasA() {
-         // Given
-         String cadena = "maritza";
-         String cadena2 = "calabaza";
-         // When
-         int resultado = example.contarLetrasA(cadena);
-         int resultado2 = example.contarLetrasA(cadena2);
-         // Then
-         assertEquals(2, resultado); // Debe haber 2 letras 'a'
-         assertEquals(4, resultado2); // Debe haber 4 letras 'a'
+        // Given
+        String cadena = "maritza";
+        String cadena2 = "calabaza";
+        // When
+        int resultado = example.contarLetrasA(cadena);
+        int resultado2 = example.contarLetrasA(cadena2);
+        // Then
+        assertEquals(2, resultado); // Debe haber 2 letras 'a'
+        assertEquals(4, resultado2); // Debe haber 4 letras 'a'
     }
 
     // 4. Método que retorna un valor booleano si la lista contiene el elemento
@@ -105,7 +105,7 @@ public class ExampleTest {
     }
 
     @Test
-    public void testEsPrimo(){
+    public void testEsPrimo() {
         // Given
         int numeroPrimo = 11;
         int numeroNoPrimo = 22;
@@ -121,11 +121,24 @@ public class ExampleTest {
     @Test
     public void testMensajeConRetraso() throws InterruptedException {
         // Given
-        //:(
+        // :(
         // When
         String resultado = example.mensajeConRetraso();
         // Then
         assertEquals("Listo después de retraso", resultado); // Mensaje esperado
     }
+
+    // 9. Método para convertir una lista de enteros a lista de strings
+    @Test
+    public void testConvertirAString() {
+        // Given
+        List<Integer> listaEnteros = Arrays.asList(1, 2, 3, 4, 5);
+        // When
+        List<String> resultado = example.convertirAString(listaEnteros);
+        // Then
+        assertEquals(Arrays.asList("1", "2", "3", "4", "5"), resultado); // Se convierte en String
+    }
+
+    
 
 }
