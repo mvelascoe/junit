@@ -117,7 +117,15 @@ public class ExampleTest {
         assertFalse(resultadoNoPrimo); // 22 no es primo
     }
 
-    
-
+    // 8. Método que simula un retraso y retorna un mensaje
+    @Test
+    public void testMensajeConRetraso() throws InterruptedException {
+        // Given
+        //:(
+        // When
+        String resultado = example.mensajeConRetraso();
+        // Then
+        assertEquals("Listo después de retraso", resultado); // Mensaje esperado
+    }
 
 }

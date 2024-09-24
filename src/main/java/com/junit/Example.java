@@ -59,4 +59,10 @@ public class Example {
         return true;
     }
 
+    // 8. Método que simula un retraso y retorna un mensaje
+    public String mensajeConRetraso() throws InterruptedException {
+        Thread.sleep(5000);
+        return "Listo después de retraso";
+    }
+
 }
