@@ -73,4 +73,16 @@ public class Example {
                 .collect(Collectors.toList());
     }
 
+    // 10. Método que calcula la media de una lista de enteros
+    public double calcularMedia(List<Integer> lista) {
+        if (lista == null || lista.isEmpty()) {
+            throw new IllegalArgumentException("La lista no puede ser nula o vacía");
+        }
+        return lista.stream()
+                .mapToInt(Integer::intValue)
+                .average()
+                .getAsDouble();
+    }
+
+    
 }

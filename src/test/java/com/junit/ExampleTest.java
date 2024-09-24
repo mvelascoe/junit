@@ -139,6 +139,16 @@ public class ExampleTest {
         assertEquals(Arrays.asList("1", "2", "3", "4", "5"), resultado); // Se convierte en String
     }
 
+    // 10. Método que calcula la media de una lista de enteros
+    @Test
+    public void testCalcularMedia(){
+        // Given
+        List<Integer> lista = Arrays.asList(1, 2, 3, 4, 5);
+        // When
+        double resultado = example.calcularMedia(lista);
+        // Then
+        assertEquals(3.0, resultado); // 1 + 2 + 3 + 4 + 5 = 15   15/5 = 3
+    }
     
 
 }
