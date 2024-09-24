@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
@@ -149,6 +150,16 @@ public class ExampleTest {
         // Then
         assertEquals(3.0, resultado); // 1 + 2 + 3 + 4 + 5 = 15   15/5 = 3
     }
-    
+
+    // 11. Método para convertir una lista de strings a una cadena en mayúsculas
+    @Test
+    public void testConvertirListaAString(){
+        // Given
+        List<String> lista = Arrays.asList("maritza", "velasco", "esteban");
+        // When
+        String resultado = example.convertirListaAString(lista);
+        // Then
+        assertEquals("MARITZA,VELASCO,ESTEBAN", resultado); // Cadena esperada en mayúsculas
+    }
 
 }

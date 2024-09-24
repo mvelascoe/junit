@@ -84,5 +84,11 @@ public class Example {
                 .getAsDouble();
     }
 
-    
+    // 11. Método para convertir una lista de strings a una cadena en mayúsculas
+    public String convertirListaAString(List<String> lista) {
+        return lista.stream()
+                .map(String::toUpperCase)
+                .collect(Collectors.joining(","));
+    }
+
 }
