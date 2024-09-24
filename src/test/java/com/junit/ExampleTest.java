@@ -93,7 +93,16 @@ public class ExampleTest {
         assertEquals("zorra", resultado); // La cadena alveres
     }
 
-    
+    // 6. Método que calcula el factorial de un número
+    @Test
+    public void testFactorial() {
+        // Given
+        int numero = 3;
+        // When
+        long resultado = example.factorial(numero);
+        // Then
+        assertEquals(6, resultado); // 3! = 3×2×1 = 6
+    }
 
 
 }

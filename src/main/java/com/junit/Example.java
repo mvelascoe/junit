@@ -34,4 +34,18 @@ public class Example {
         return new StringBuilder(cadena).reverse().toString();
     }
 
+    // 6. Método que calcula el factorial de un número
+    public long factorial(int numero) {
+        if (numero < 0) {
+            throw new IllegalArgumentException("Factorial no definido para números negativos");
+        }
+        long resultado = 1;
+        for (int i = 1; i <= numero; i++) {
+            resultado *= i;
+        }
+        return resultado;
+    }
+
+    
+
 }
